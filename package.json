@@ -1,0 +1,14 @@
+{
+  "name": "base-style",
+  "version": "0.0.1-alpha.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinpac/base-style.git"
+  },
+  "author": "Vinicius Pacheco (vin175pacheco@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinpac/base-style/issues"
+  },
+  "homepage": "https://github.com/vinpac/base-style#readme"
+}
