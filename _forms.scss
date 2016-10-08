@@ -90,8 +90,10 @@ label {
 
     &:checked {
       box-shadow: none;
-      background-image: $input-checkbox-icon;
       background-color: $input-checkbox-checked-bg;
+      @if $input-checkbox-icon {
+        background-image: $input-checkbox-icon;
+      }
     }
   }
 
