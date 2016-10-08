@@ -10,5 +10,12 @@
   "bugs": {
     "url": "https://github.com/vinpac/base-style/issues"
   },
-  "homepage": "https://github.com/vinpac/base-style#readme"
+  "scripts": {
+    "compile": "node-sass ./base-compile.scss -o .build",
+    "watch": "node-sass ./base-compile.scss -w -o .build"
+  },
+  "homepage": "https://github.com/vinpac/base-style#readme",
+  "dependencies": {
+    "node-sass": "^3.10.1"
+  }
 }
