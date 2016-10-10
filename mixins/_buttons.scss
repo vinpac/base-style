@@ -35,6 +35,7 @@
   } @else {
     &:hover,
     &:active {
+      color: $color;
       border-color: color-variant($border-color, 8%);
     }
 
