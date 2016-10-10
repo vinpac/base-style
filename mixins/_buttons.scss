@@ -33,9 +33,12 @@
       color: $fill-text-color;
     }
   } @else {
+    @include hover-focus {
+      color: $color;
+    }
+
     &:hover,
     &:active {
-      color: $color;
       border-color: color-variant($border-color, 8%);
     }
 
@@ -45,7 +48,7 @@
   }
 }
 
-@mixin button-text($color, $color-active: $color) {
+@mixin button-text-variant($color, $color-active: $color) {
   background: none;
   color: $color;
 
