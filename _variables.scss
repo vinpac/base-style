@@ -2,7 +2,7 @@
 // Variables with !default are overwritten by the app's variables
 
 // Enable flex
-$enable-flex: true;
+$enable-flex: true !default;
 
 // Colors
 $color-primary: #007ee5 !default;
