@@ -50,10 +50,6 @@ label {
   display: block;
 }
 
-.form-group-warn {
-  @include form-group-state($color-warning);
-}
-
 .form-group {
 
   margin-bottom: 10px;
@@ -100,4 +96,9 @@ label {
   .input[type="radio"] {
     border-radius: 50%;
   }
+}
+
+
+.form-group-warning {
+  @include form-group-state($color-warning);
 }

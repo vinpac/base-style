@@ -1,6 +1,7 @@
 @mixin form-group-state($color) {
   .input {
     border-color: $color;
+    color: $color;
   }
 
   .input-subtext,
