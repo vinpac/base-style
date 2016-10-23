@@ -1,12 +1,17 @@
-@mixin button-variant($color, $text-color: #FFF, $lighten: $btn-lighten, $text-active-color: $text-color) {
+@mixin button-variant(
+  $color,
+  $text-color: #FFF,
+  $text-active-color: $text-color,
+  $lighten-intensity: $btn-lighten-intensity
+) {
   background: $color;
   color: $text-color;
   border-color: $color;
 
   &:hover,
   &.focus {
-    border-color: color-variant($color, 4%, $lighten);
-    background: color-variant($color, 4%, $lighten);
+    border-color: lighten($color, $lighten-intensity);
+    background: lighten($color, $lighten-intensity);
   }
 
   &:hover,
@@ -17,8 +22,8 @@
   &:active,
   &.active {
     color: $text-active-color;
-    border-color: color-variant($color, 8%, $lighten);
-    background: color-variant($color, 8%, $lighten);
+    border-color: darken($color, 8%);
+    background: darken($color, 8%);
   }
 }
 
@@ -33,13 +38,14 @@
       color: $fill-text-color;
     }
   } @else {
-    @include hover-focus {
+
+    &:focus {
       color: $color;
     }
 
-    &:hover,
-    &:active {
-      border-color: color-variant($border-color, 8%);
+    &:hover {
+      color: $color;
+      background: rgba($color, .1);
     }
 
     &:active {

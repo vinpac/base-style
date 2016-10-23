@@ -9,7 +9,7 @@ $color-primary: #007ee5 !default;
 $color-primary-dark: #026DC5 !default;
 $color-accent: #6772E5 !default;
 $color-success: #60BB4D !default;
-$color-warning: #D32F2F !default;
+$color-warning: #E81C4F !default;
 
 // Variables
 $grid-breakpoints: (
@@ -61,7 +61,7 @@ $btn-line-height: 1.2 !default;
 $btn-font-weight: 500 !default;
 $btn-border-radius: 3px !default;
 $btn-outline-fill: false;
-$btn-lighten: false;
+$btn-lighten-intensity: 4%;
 $btn-circle-size: 2.375rem;
 
 // Forms
@@ -86,7 +86,7 @@ $input-checkbox-icon: false !default;
 
 $input-style-check-n-radio: true !default;
 
-$input-group-addon-bg: #FAFAFB  !default;
+$input-group-addon-bg: #FFF  !default;
 $input-btn-border-width: $input-border-width  !default;
 $input-group-addon-border-color: $input-border-color !default;
 

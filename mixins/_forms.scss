@@ -1,8 +1,38 @@
+@mixin form-group-variant(
+  $bg-color,
+  $text-color,
+  $border-color,
+  $border-color-highlight: $border-color,
+  $box-shadow: false
+) {
+
+  &:hover {
+    border-color: darken($input-border-color, 10%)
+  }
+
+  &:focus,
+  &.focus {
+    border-color: $border-color-highlight;
+
+    @if $box-shadow {
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
 @mixin form-group-state($color) {
-  .input {
+  .input,
+  .input-group-addon,
+  .input-group-btn > .btn {
     border-color: $color;
     color: $color;
   }
+
+  .input-group-btn > .btn:hover {
+    background: rgba($color, .2)
+  }
+
+
 
   .input-subtext,
   label {
