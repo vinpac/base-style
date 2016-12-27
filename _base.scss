@@ -1,7 +1,7 @@
 @import 'variables';
 @import 'normalize';
 @import 'reboot';
-@import 'mixins';
+@import 'mixins/index';
 
 @import 'type';
 @import 'grid';
@@ -14,15 +14,11 @@
 @import 'preloader';
 @import 'card';
 @import 'list';
-@import 'spacing';
 @import 'table';
-@import 'tabs';
 
 // Components
 @import 'dropdown';
 @import 'modal';
-@import 'slide';
 
+@import 'utilities/index';
 
-// Extra
-@import 'utilities';

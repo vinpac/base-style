@@ -1,14 +1,10 @@
 // Alignment
-
 .text-justify        { text-align: justify !important; }
 .text-nowrap         { white-space: nowrap !important; }
 .text-truncate       { @include text-truncate; }
 
 // Weight italic
-//
 .text-weight-normal { font-weight: normal; }
-.text-weight-light { font-weight: $text-light-weight; }
-.text-weight-semibold { font-weight: $text-semibold-weight; }
 .text-weight-bold { font-weight: bold; }
 .text-italic { font-style: italic; }
 
@@ -29,6 +25,9 @@
 .text-capitalize     { text-transform: capitalize !important; }
 
 // Contextual colors
+.text-white {
+  color: #FFF !important;
+}
 
 @include text-emphasis-variant('.text-muted', $text-muted);
 
@@ -42,5 +41,5 @@
 
 @include text-emphasis-variant('.text-warning', $color-warning);
 
-@include text-emphasis-variant-light('.text-light', #FFF);
+@include text-emphasis-variant-light('.text-light', rgba(#FFF, .8), #FFF);
 

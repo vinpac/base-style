@@ -1,9 +1,5 @@
-.bg-primary { background-color: $color-primary !important; }
+// Context backgrounds
 
-.bg-primary-dark { background-color: $color-primary-dark !important; }
+@include bg-variant('bg-primary', $color-primary);
 
-.bg-accent { background-color: $color-accent !important; }
-
-.bg-success { background-color: $color-success !important; }
-
-.bg-warning { background-color: $color-warning !important; }
+@include bg-variant('bg-primary-dark', $color-primary-dark);

@@ -1,17 +1,32 @@
 // Base variables
 // Variables with !default are overwritten by the app's variables
 
+// Includes
+$include-utilities: true !default;
+
 // Enable flex
 $enable-flex: true !default;
 
 // Colors
 $color-primary: #007ee5 !default;
-$color-primary-dark: #026DC5 !default;
+$color-primary-dark: darken($color-primary, 10%) !default;
 $color-accent: #6772E5 !default;
 $color-success: #60BB4D !default;
 $color-warning: #E81C4F !default;
 
-// Variables
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$line-height-lg:         (4 / 3) !default;
+$line-height-sm:         1.5 !default;
+
+$border-radius:          .25rem !default;
+$border-radius-lg:       .3rem !default;
+$border-radius-sm:       .2rem !default;
+
+// Grid
 $grid-breakpoints: (
   xs: 0,
   sm: 544px,
@@ -23,20 +38,68 @@ $grid-breakpoints: (
 // Grid containers
 $container-max-widths: (
   sm: 576px,
-  md: 720px,
-  lg: 940px,
+  md: 768px,
+  lg: 992px,
   xl: 1200px
 ) !default;
 
-// Font
-$font-family-base: Arial, Helvetica, sans-serif !default;
-$line-height-base: 1.5 !default;
-$line-height-paragraph: $line-height-base !default;
-$font-size-root: 16px !default;
-$font-size-base: 16px !default;
-$text-color-base: #333 !default;
-$body-bg: #FFF !default;
+// Spacing
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($spacer-x * .5),
+    y: ($spacer-y * .5)
+  ),
+  2: (
+    x: $spacer-x,
+    y: $spacer-y
+  ),
+  3: (
+    x: ($spacer-x * 1.5),
+    y: ($spacer-y * 1.5)
+  )
+) !default;
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+) !default;
 
+// Body
+$body-bg: white !default;
+
+// Text
+$text-color-base: #333 !default;
+$text-muted: #999 !default;
+$text-muted-dark: #666 !default;
+
+// Font
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:       $font-family-sans-serif !default;
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg:   1.25rem !default;
+$font-size-sm:   .875rem !default;
+$font-size-xs:   .75rem !default;
+
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
 
 $font-size-h1: 2.5rem !default;
 $font-size-h2: 2rem !default;
@@ -45,10 +108,33 @@ $font-size-h4: 1.5rem !default;
 $font-size-h5: 1.25rem !default;
 $font-size-h6: 1rem !default;
 
-$headings-margin-bottom: .5rem !default;
-$headings-line-height: 1.15 !default;
-$headings-font-weight: 500 !default;
-$headings-color: inherit !default;
+
+
+
+$text-sizes: (
+  1: (
+    size: 6rem,
+    weight: 300
+  ),
+  2: (
+    size: 5.5rem,
+    weight: 300
+  ),
+  3: (
+    size: 4.5rem,
+    weight: 300
+  ),
+  4: (
+    size: 3.5rem,
+    weight: 300
+  )
+) !default;
+
+$headings-margin-bottom: ($spacer / 2) !default;
+$headings-font-family:   inherit !default;
+$headings-font-weight:   500 !default;
+$headings-line-height:   1.1 !default;
+$headings-color:         inherit !default;
 
 // Grid
 $grid-columns: 12 !default;
@@ -58,23 +144,23 @@ $grid-gutter-width: 30px !default;
 $btn-padding-x: 1rem !default;
 $btn-padding-y: .6rem !default;
 $btn-line-height: 1.2 !default;
-$btn-font-weight: 500 !default;
-$btn-border-radius: 3px !default;
-$btn-outline-fill: false;
-$btn-lighten-intensity: 4%;
-$btn-circle-size: 2.375rem;
+$btn-font-weight: $font-weight-normal !default;
+$btn-border-radius: $border-radius !default;
+$btn-outline-fill: false !default;
+$btn-lighten-intensity: 4% !default;
+$btn-block-spacing-y: .5rem !default;
 
 // Forms
 $input-padding-x: .65rem !default;
 $input-padding-y: .6rem !default;
 $input-line-height: 1.2 !default;
-$input-bg: #FFF !default;
+$input-bg: white !default;
 $input-border-width: 1px !default;
 $input-border-color: #ccc !default;
 $input-border-color-highlight: $color-primary !default;
 $input-color: $text-color-base !default;
 $input-color-placeholder: rgba(#000,.35) !default;
-$input-border-radius: 4px !default;
+$input-border-radius: $border-radius !default;
 $input-active-box-shadow: none !default;
 
 
@@ -91,11 +177,11 @@ $input-btn-border-width: $input-border-width  !default;
 $input-group-addon-border-color: $input-border-color !default;
 
 // Dropdown
-$dropdown-bg: #FFF;
-$dropdown-item-padding-x: 1.4rem;
-$dropdown-item-padding-y: .38rem;
-$dropdown-border-radius: 4px;
-$dropdown-menu-zindex: 5999;
+$dropdown-bg: #FFF !default;
+$dropdown-item-padding-x: 1.4rem !default;
+$dropdown-item-padding-y: .38rem !default;
+$dropdown-border-radius: 4px !default;
+$dropdown-menu-zindex: 5999 !default;
 
 // Modal
 $modal-bg: rgba(#000, .6) !default;
@@ -113,13 +199,18 @@ $card-header-bg: #FBFCFD !default;
 $card-border-width: 1px !default;
 $card-border-color: #E3E8F6 !default;
 $card-border-radius: 6px !default;
-$card-spacer-x: 1.25rem;
-$card-spacer-y: .75rem;
+$card-spacer-x: 1.25rem !default;
+$card-spacer-y: .75rem  !default;
 
 // List
-$list-item-spacer-y: .75rem;
-$list-item-spacer-x: 1.25rem;
-$list-item-action-bg: #F5F5F5;
+$list-bg: white !default;
+$list-border-radius: $border-radius !default;
+$list-item-spacer-y: .75rem !default;
+$list-item-spacer-x: 1.25rem !default;
+$list-item-action-hover-bg: #F5F5F5 !default;
+$list-item-action-hover-decoration: none !default;
+$list-border-width: 1px !default;
+$list-border-color: #ddd !default;
 
 // Link
 $link-color: #007ee5 !default;
@@ -130,23 +221,12 @@ $link-hover-decoration: underline !default;
 // Tabs
 $tab-text-color: #9999A7;
 
-// Margin
-$spacer-horizontal: .5rem .8rem 1.25rem !default;
-$spacer-vertical: 1rem 2rem 2.5rem !default;
-
-// Text
-$text-muted: #999 !default;
-$text-muted-dark: #666 !default;
-
-$text-light-weight: 300 !default;
-$text-semibold-weight: 600 !default;
-
 // Hr
 $hr-color: rgba(0,0,0,.1) !default;
-$hr-muted-color: rgba(0,0,0,.05) !default;
+$hr-muted: rgba(0,0,0,.05) !default;
 
 // Table
-$table-border-radius: 6px;
-$table-border-color: #eceeef;
-$table-bg: #FFF;
-$table-text-color: $text-color-base;
+$table-border-radius: 6px !default;
+$table-border-color: #eceeef !default;
+$table-bg: #FFF !default;
+$table-text-color: $text-color-base !default;
