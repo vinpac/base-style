@@ -27,7 +27,12 @@
   }
 }
 
-@mixin button-outline-variant($color, $border-color: $color, $fill: $btn-outline-fill, $fill-text-color: #FFF) {
+@mixin button-outline-variant(
+  $color,
+  $border-color: lighten($color, 15%),
+  $fill: $btn-outline-fill,
+  $fill-text-color: #FFF
+) {
   background: none;
   border: 1px solid $border-color;
   color: $color;
@@ -44,12 +49,12 @@
     }
 
     &:hover {
-      color: $color;
-      background: rgba($color, .1);
+      border-color: darken($border-color, 10.5%);
     }
 
     &:active {
-      color: darken($color, 8%);
+      color: $color;
+      background: rgba($color, .05);
     }
   }
 }
