@@ -6,18 +6,17 @@
   background: $table-bg;
   color: $table-text-color;
 
-  thead {
-    th {
-      padding: .75rem;
-      font-weight: 600;
-    }
-  }
-
   td, th {
     padding: .75rem;
     border-style: solid;
     border-color: $table-border-color;
     border-width: 1px 0 0 1px;
+  }
+
+  th {
+    padding: .75rem;
+    font-weight: 600;
+    border-bottom-width: 1px;
   }
 
   tr td:last-child,
@@ -29,6 +28,10 @@
     td {
       border-bottom-width: 1px;
     }
+  }
+
+  thead + tbody tr:first-child td {
+    border-top-width: 0;
   }
 
   &.table-radius {
@@ -70,4 +73,38 @@
     }
   }
 
+}
+
+.table-col-sort {
+  user-select: none;
+
+  .table-col-icon {
+    transition: transform .2s, color .3s;
+    color: rgba(#FFF, 0);
+  }
+
+  .table-col-header {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $table-sort-active;
+
+    .table-col-icon {
+      color: rgba(#000, .4);
+    }
+  }
+
+  &.active {
+    color: $table-sort-active;
+
+    .table-col-icon {
+      color: $table-sort-active;
+    }
+  }
+
+  &.inverse .table-col-icon {
+    transform: rotate(180deg);
+  }
 }

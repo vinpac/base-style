@@ -16,7 +16,8 @@
     }
   }
 }
-
-.col-fill {
-  flex: 1 1 auto;
+@if $enable-flex {
+  .col-fill {
+    flex: 1 1 auto;
+  }
 }
